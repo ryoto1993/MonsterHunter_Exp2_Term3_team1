@@ -30,12 +30,12 @@ public class Hunter extends Character{
 			attack(_monster);
 
 			if(_monster.HP==0) {
-				System.out.println(name + "は" + _monster.name + "を倒した．");
+				System.out.println(this.name + "は" + _monster.name + "を倒した．");
 				break;
 			}
 			_monster.attack(this);
 			if(HP==0) {
-				System.out.println(name + "は" + _monster.name + "に殺害された．");
+				System.out.println(this.name + "は" + _monster.name + "に殺害された．");
 				break;
 			}
 		}
