@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class Hunter extends Character{
 
 	protected Guild myGuild;
-	protected Quest quest;
 	protected Armor armor;
 	protected Weapon weapon;
 	protected LinkedList<Item> items = new LinkedList<Item>();
@@ -31,17 +30,12 @@ public class Hunter extends Character{
 			attack(_monster);
 
 			if(_monster.HP==0) {
-				quest.restMonsters--;
-				if(quest.restMonsters==0) {
-					items.push(quest.reward);
-					System.out.println(name + "は" + quest.name + "を達成し、報酬として" + quest.reward.name + "を手に入れた。");
-					quest = null;
-				}
+				System.out.println(name + "は" + _monster.name + "を倒した．");
 				break;
 			}
 			_monster.attack(this);
-
 			if(HP==0) {
+				System.out.println(name + "は" + _monster.name + "に殺害された．");
 				break;
 			}
 		}
