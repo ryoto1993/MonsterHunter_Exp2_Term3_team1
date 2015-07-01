@@ -16,8 +16,7 @@ public class Quest {
 		Monster tmp = _monster;
 		restMonsters = _restMonsters;
 		for(int i=0; i<restMonsters; i++) {
-			tmp.name = tmp.name + String.valueOf(i+1);
-			monsters.add(new Monster(tmp.name, tmp.level, tmp.maxHP, tmp.AP, tmp.DP, tmp.species, tmp.dropItem));
+			monsters.add(new Monster(tmp.name + String.valueOf(i+1), tmp.level, tmp.maxHP, tmp.AP, tmp.DP, tmp.species, tmp.dropItem));
 		}
 	}
 
@@ -48,8 +47,9 @@ public class Quest {
 
 				// モンスターが死んだら
 				if(currentMonster.HP==0) {
-					monsters.remove(currentMonster);
+					monsters.remove();
 					restMonsters--;
+					currentMonster = monsters.peek();
 					// 全員倒したら
 					if(monsters.size()==0) {
 						System.out.println("クエスト達成！");
