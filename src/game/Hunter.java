@@ -26,18 +26,16 @@ public class Hunter extends Character{
 		}
 	}
 	
-	public void buttle(Monster _monster) {
+	public void battle(Monster _monster) {
 		while(true) {
 			attack(_monster);
 
 			if(_monster.HP==0) {
-				if(quest.species==_monster.species) {
-					quest.restMonsters--;
-					if(quest.restMonsters==0) {
-						items.push(quest.reward);
-						System.out.println(name + "は" + quest.name + "を達成し、報酬として" + quest.reward.name + "を手に入れた。");
-						quest = null;
-					}
+				quest.restMonsters--;
+				if(quest.restMonsters==0) {
+					items.push(quest.reward);
+					System.out.println(name + "は" + quest.name + "を達成し、報酬として" + quest.reward.name + "を手に入れた。");
+					quest = null;
 				}
 				break;
 			}

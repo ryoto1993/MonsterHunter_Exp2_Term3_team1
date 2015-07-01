@@ -21,8 +21,8 @@ public class Guild {
 		System.out.println(name + "ギルドを生成しました。");
 	}
 
-	public void makeQuests(String _questName, Item _reward, Species _species, int _restMonsters) {
-		quests.push(new Quest(_questName, _reward, _species, _restMonsters));
+	public void makeQuests(String _questName, Item _reward, Monster _monster, int _restMonsters) {
+		quests.push(new Quest(_questName, _reward, _monster, _restMonsters));
 	}
 	public void acceptHunter(Hunter _hunter) {
 		hunters.add(_hunter);
@@ -54,7 +54,7 @@ public class Guild {
 			System.out.print(i+1+":");
 			System.out.print(String.format(" %-10s", quests.get(i).name));
 			System.out.print(String.format("%-6s", quests.get(i).reward.name));
-			System.out.print(String.format("%-10s", quests.get(i).species.name()));
+			System.out.print(String.format("%-10s", quests.get(i).monsters.peek().species.name()));
 			System.out.println(String.format("%-2d", quests.get(i).restMonsters));
 
 
