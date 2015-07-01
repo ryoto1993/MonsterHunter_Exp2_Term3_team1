@@ -14,10 +14,6 @@ public class Main {
 		alice.makeQuests("CupCake", new Item(ItemName.Iron), new Monster("ゴブリン", 1, 30, 5, 5, Species.Goblin, new Item(ItemName.Bone)), 1);
 		alice.makeQuests("Eclair", new Item(ItemName.Iron), new BigMonster("ドラゴン", 5, 100, 15, 15, Species.Dragon, new Item(ItemName.Tail), 30), 1);
 
-		LinkedList<Monster> goblins = new LinkedList<Monster>();
-		LinkedList<Monster> wolfs = new LinkedList<Monster>();
-		LinkedList<Monster> dragons = new LinkedList<Monster>();
-
 		alice.hunters.get(0).quest = alice.getQuest();
 		alice.hunters.get(0).battle(alice.hunters.get(0).quest.monsters.poll());
 
