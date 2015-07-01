@@ -19,6 +19,7 @@ public class Guild {
 	public Guild(String _name) {
 		name = _name;
 		System.out.println(name + "ギルドを生成しました。");
+		System.out.println();
 	}
 
 	public void makeQuests(String _questName, Item _reward, Monster _monster, int _restMonsters) {
@@ -27,66 +28,41 @@ public class Guild {
 	public void acceptHunter(Hunter _hunter) {
 		hunters.add(_hunter);
 	}
-	public Quest getQuest() {
+
+	public void joinInQuest(Hunter hunter) {
 		int tmp = 0;
-		Quest qtmp;
+
+		System.out.println(hunter.name + "はどのクエストを受注しますか?");
 
 		showQuest();
-		
-		System.out.println("どのクエストを受注しますか? >");
+
+		System.out.print("クエスト番号 >> ");
+
 		try{
 			tmp = Integer.parseInt(br.readLine());
 		} catch(IOException e){ }
 
 		if(tmp<quests.size() && tmp>=0) {
-			qtmp = quests.get(tmp-1);
-			quests.remove(tmp-1);
-			return qtmp;
+			System.out.println();
+			quests.get(tmp).hunters.add(hunter);
 		} else {
-			return null;
+			System.out.println("クエストに参加できませんでした．");
+			System.out.println();
 		}
 
-	}
-	public int joinInQuest(Hunter hunter) {
 
-		int tmp = 0;
-		Quest qtmp;
-
-		showQuest();
-
-		System.out.println("どのクエストを受注しますか? >");
-		try{
-			tmp = Integer.parseInt(br.readLine());
-		} catch(IOException e){ }
-		/*
-		if(tmp<quests.size() && tmp>=0) {
-			qtmp = quests.get(tmp-1);
-			quests.remove(tmp-1);
-
-			hunters.add(hunter);
-			//return qtmp;
-		} else {
-			//return null;
-		}
-*/
-
-
-		hunters.add(hunter);
-		return tmp;
 	}
 	public void showQuest(){
-		System.out.println("受注できるクエスト一覧");
+		System.out.println("====== 受注できるクエスト一覧 ======");
 		System.out.println("　 クエスト名　報酬　モンスター　数");
 		for(int i=0; i<quests.size(); i++){
-			System.out.print(i+1+":");
+			System.out.print(i+":");
 			System.out.print(String.format(" %-10s", quests.get(i).name));
 			System.out.print(String.format("%-6s", quests.get(i).reward.name));
 			System.out.print(String.format("%-10s", quests.get(i).monsters.peek().species.name()));
 			System.out.println(String.format("%-2d", quests.get(i).restMonsters));
-
-
 		}
-		System.out.println("");
+		System.out.println("====================================");
 	}
 
 }
