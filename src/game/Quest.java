@@ -20,10 +20,6 @@ public class Quest {
 		}
 	}
 
-	public void joinInQuest(Hunter hunter) {
-		hunters.add(hunter);
-	}
-
 	public void startBattle() {
 		Boolean onBattle = true;
 		Random rnd = new Random();

@@ -47,6 +47,33 @@ public class Guild {
 		}
 
 	}
+	public int joinInQuest(Hunter hunter) {
+
+		int tmp = 0;
+		Quest qtmp;
+
+		showQuest();
+
+		System.out.println("どのクエストを受注しますか? >");
+		try{
+			tmp = Integer.parseInt(br.readLine());
+		} catch(IOException e){ }
+		/*
+		if(tmp<quests.size() && tmp>=0) {
+			qtmp = quests.get(tmp-1);
+			quests.remove(tmp-1);
+
+			hunters.add(hunter);
+			//return qtmp;
+		} else {
+			//return null;
+		}
+*/
+
+
+		hunters.add(hunter);
+		return tmp;
+	}
 	public void showQuest(){
 		System.out.println("受注できるクエスト一覧");
 		System.out.println("　 クエスト名　報酬　モンスター　数");
