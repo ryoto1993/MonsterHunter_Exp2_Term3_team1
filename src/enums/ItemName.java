@@ -1,5 +1,5 @@
 package enums;
 
 public enum ItemName {
-	Iron, Bone, Leather, Tail, Mediicne
+	Iron, Bone, Leather, Tail, Medicine
 }

@@ -18,8 +18,14 @@ public class Hunter extends Character{
 		//
 	}
 	
-	public void battle(Monster _monster) {
-		attack(_monster);
+	public void battle(Monster _monster, Goods _goods) {
+
+		if(_goods==null) {
+			attack(_monster);
+		} else {
+			int tmp = this.HP +_goods.useItem();
+			this.HP = tmp > maxHP ? this.maxHP : tmp;
+		}
 
 		if(_monster.HP==0) {
 			System.out.println(this.name + "は" + _monster.name + "を倒した．");

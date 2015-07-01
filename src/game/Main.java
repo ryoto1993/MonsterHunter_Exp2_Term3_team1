@@ -14,6 +14,8 @@ public class Main {
 		garm.makeQuests("Novice02", new Item(ItemName.Iron), new Monster("ゴブリン", 1, 30, 5, 5, Species.Goblin, new Item(ItemName.Bone)), 1);
 		garm.makeQuests("Expert01", new Item(ItemName.Iron), new BigMonster("ドラゴン", 5, 100, 15, 15, Species.Dragon, new Item(ItemName.Tail), 30), 1);
 
+		garm.hunters.get(0).items.push(new Goods(ItemName.Medicine));
+
 		garm.joinInQuest(garm.hunters.get(0));
 		garm.joinInQuest(garm.hunters.get(1));
 
