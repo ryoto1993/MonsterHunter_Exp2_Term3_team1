@@ -41,7 +41,7 @@ public class Quest {
 					if(hunters.size()==0) {
 						System.out.println("クエストの参加者は全滅した．");
 						onBattle = false;
-						continue;
+						break;
 					}
 				}
 
@@ -59,42 +59,10 @@ public class Quest {
 						}
 						onBattle = false;
 					}
-					continue;
+					break;
 				}
 			}
 
-
-
-			/* ハンターたちの攻撃 *//*
-			for(int i=0; i<hunters.size(); i++) {
-				hunters.get(i).attack(currentMonster);
-
-				if (currentMonster.HP == 0) {
-					this.restMonsters--;
-					// モンスターがいなくなったら
-					if (monsters.size() == 0) {
-						for(int j=0; j<hunters.size(); j++) {
-							hunters.get(i).items.push(reward);
-							System.out.println(name + "は" + this.name + "を達成し、報酬として" + this.reward.name + "を手に入れた。");
-						}
-						break;
-					}
-					currentMonster = monsters.peek();
-				}
-			}
-			// 敵数が0になったら
-			if(!onBattle) break;
-
-			*//* モンスターたちの攻撃 *//*
-			int huntersId = rnd.nextInt(hunters.size());
-			currentMonster.attack(hunters.get(huntersId));
-
-			if(hunters.get(huntersId).HP==0) {
-				System.out.println(hunters.get(huntersId).name + "は" + currentMonster.name + "に殺された．");
-				hunters.remove(huntersId);
-				if(hunters.size()==0)
-					onBattle = false;
-			}*/
 		}
 	}
 }
