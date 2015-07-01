@@ -57,9 +57,9 @@ public class Guild {
 		System.out.println("　 クエスト名　報酬　モンスター　数");
 		for(int i=0; i<quests.size(); i++){
 			System.out.print(i+":");
-			System.out.print(String.format(" %-10s", quests.get(i).name));
+			System.out.print(String.format("  %-11s", quests.get(i).name));
 			System.out.print(String.format("%-6s", quests.get(i).reward.name));
-			System.out.print(String.format("%-10s", quests.get(i).monsters.peek().species.name()));
+			System.out.print(String.format("%-12s", quests.get(i).monsters.peek().species.name()));
 			System.out.println(String.format("%-2d", quests.get(i).restMonsters));
 		}
 		System.out.println("====================================");
