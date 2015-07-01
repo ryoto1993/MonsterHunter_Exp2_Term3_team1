@@ -17,7 +17,7 @@ public class Quest {
 		restMonsters = _restMonsters;
 		for(int i=0; i<restMonsters; i++) {
 			tmp.name = tmp.name + String.valueOf(i+1);
-			monsters.add(tmp);
+			monsters.add(new Monster(tmp.name, tmp.level, tmp.maxHP, tmp.AP, tmp.DP, tmp.species, tmp.dropItem));
 		}
 	}
 
@@ -59,7 +59,6 @@ public class Quest {
 						}
 						onBattle = false;
 					}
-					break;
 				}
 			}
 

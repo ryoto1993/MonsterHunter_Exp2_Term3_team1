@@ -22,7 +22,7 @@ public class Guild {
 	}
 
 	public void makeQuests(String _questName, Item _reward, Monster _monster, int _restMonsters) {
-		quests.push(new Quest(_questName, _reward, _monster, _restMonsters));
+		quests.add(new Quest(_questName, _reward, _monster, _restMonsters));
 	}
 	public void acceptHunter(Hunter _hunter) {
 		hunters.add(_hunter);

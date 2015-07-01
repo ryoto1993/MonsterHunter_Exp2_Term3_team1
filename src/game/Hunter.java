@@ -17,27 +17,20 @@ public class Hunter extends Character{
 	public void useItem(Item _item) {
 		//
 	}
-	public void attack(Monster _char) {
-		super.attack(_char);
-		if(_char.HP==0) {
-			items.push(_char.dropItem);
-			System.out.println(name + "は" + _char.name + "から" + _char.dropItem.name + "を奪った。");
-		}
-	}
 	
 	public void battle(Monster _monster) {
-		while(true) {
-			attack(_monster);
+		attack(_monster);
 
-			if(_monster.HP==0) {
-				System.out.println(this.name + "は" + _monster.name + "を倒した．");
-				break;
-			}
-			_monster.attack(this);
-			if(HP==0) {
-				System.out.println(this.name + "は" + _monster.name + "に殺害された．");
-				break;
-			}
+		if(_monster.HP==0) {
+			System.out.println(this.name + "は" + _monster.name + "を倒した．");
+			items.push(_monster.dropItem);
+			System.out.println(name + "は" + _monster.name + "から" + _monster.dropItem.name + "を奪った。");
+			return;
+		}
+		_monster.attack(this);
+		if(HP==0) {
+			System.out.println(this.name + "は" + _monster.name + "に殺害された．");
+			return;
 		}
 	}
 
