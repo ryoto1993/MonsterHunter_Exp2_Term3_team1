@@ -19,15 +19,6 @@ public class Main {
 		LinkedList<Monster> wolfs = new LinkedList<Monster>();
 		LinkedList<Monster> dragons = new LinkedList<Monster>();
 
-		/*
-		for(int i=0; i<10; i++) {
-			goblins.push(new Monster("ゴブリン"+i, 1, 30, 5, 5, Species.Goblin, new Item(ItemName.Bone)));
-			wolfs.push(new Monster("ウルフ"+i, 3, 50, 10, 10, Species.Wolf, new Item(ItemName.Leather)));
-			dragons.push(new BigMonster("ドラゴン"+i, 5, 100, 15, 15, Species.Dragon, new Item(ItemName.Tail), 30));
-		}
-		*/
-
-
 		alice.hunters.get(0).quest = alice.getQuest();
 		alice.hunters.get(0).battle(alice.hunters.get(0).quest.monsters.poll());
 
