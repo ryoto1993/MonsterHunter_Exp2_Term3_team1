@@ -25,6 +25,7 @@ public class Hunter extends Character{
 			System.out.println(this.name + "は" + _monster.name + "を倒した．");
 			items.push(_monster.dropItem);
 			System.out.println(name + "は" + _monster.name + "から" + _monster.dropItem.name + "を奪った。");
+			System.out.println();
 			return;
 		}
 		_monster.attack(this);

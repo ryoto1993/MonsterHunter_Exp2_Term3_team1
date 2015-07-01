@@ -30,7 +30,7 @@ public class Character {
 		_char.HP = _char.HP - tmp <0 ? 0 : _char.HP - tmp ;
 		System.out.println(name + "は" + _char.name + "に" + tmp + "のダメージを与えた！");
 		System.out.println(_char.name + "の残りHP : " + _char.HP);
-		if(_char.HP==0)
-			System.out.println(_char.name + "は死んだ。");
+		if(_char.HP==0) {}
+		else System.out.println();
 	}
 }
