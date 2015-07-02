@@ -7,7 +7,7 @@ import enums.Species;
 public class BigMonster extends Monster{
 
 	protected int specialAP;
-	int ran = (int)(Math.random()*2);
+	Random rnd = new Random();
 
 	public BigMonster(String _name, int _level, int _maxHP, int _AP, int _DP, Species _species, Item _dropItem, int _specialAP) {
 		super(_name, _level, _maxHP, _AP, _DP, _species, _dropItem);
@@ -15,7 +15,7 @@ public class BigMonster extends Monster{
 	}
 
 	public void attack(Character _char) {
-		if(ran==1){
+		if(rnd.nextInt(100)<40){
 			int tmp = specialAP - (rnd.nextInt(20)-10) + DP;
 			_char.HP = _char.HP - tmp <0 ? 0 : _char.HP - tmp ;
 			System.out.println(name + "は" + _char.name + "に" + tmp + "特別ダメージを与えた！");
