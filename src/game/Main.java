@@ -1,12 +1,12 @@
 package game;
-import java.util.LinkedList;
 
 import enums.ItemName;
 import enums.Species;
 
 public class Main {
-	public static void main(String[] args) {
 
+	public static GUI gui = new GUI();
+	public static void main(String[] args) {
 		Guild garm = new Guild("Garm");
 		garm.acceptHunter(new Hunter("Alex", 1, 100, 10, 20));
 		garm.acceptHunter(new Hunter("Betty", 10, 1000, 100, 200));
