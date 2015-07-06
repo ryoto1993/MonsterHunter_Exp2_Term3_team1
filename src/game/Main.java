@@ -5,7 +5,6 @@ import enums.Species;
 
 public class Main {
 
-	public static GUI gui = new GUI();
 	public static void main(String[] args) {
 		Guild garm = new Guild("Garm");
 		garm.acceptHunter(new Hunter("Alex", 1, 100, 10, 20));
