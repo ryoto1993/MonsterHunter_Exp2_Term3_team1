@@ -14,16 +14,12 @@ public class Hunter extends Character{
 
 	}
 
-	public void useItem(Item _item) {
-		//
-	}
-	
 	public void battle(Monster _monster, Goods _goods) {
 
 		if(_goods==null) {
 			attack(_monster);
 		} else {
-			int tmp = this.HP +_goods.useItem();
+			int tmp = this.HP +_goods.useGoods();
 			this.HP = tmp > maxHP ? this.maxHP : tmp;
 		}
 

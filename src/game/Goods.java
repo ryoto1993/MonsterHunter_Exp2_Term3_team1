@@ -15,7 +15,7 @@ public class Goods extends Item {
         }
     }
 
-    public int useItem() {
+    public int useGoods() {
         System.out.println (name + "を使ってHPを" + plusHP + "回復した!");
         return  plusHP;
     }
